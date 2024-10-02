@@ -1,0 +1,76 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@* @model MaxMobility_Assignment.Models.ViewModels.UploadDataViewModel *@
+@model List<MaxMobility_Assignment.Models.ViewModels.UploadDataViewModel>
+
+
+@{
+    ViewBag.Title = "Upload Excel File";
+}
+
+<h2 class="my-4 text-center">Upload Excel File</h2>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            @using (Html.BeginForm("UploadFile", "Upload", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                <div class="mb-3">
+                    <label for="fileInput" class="form-label">Choose Excel File</label>
+                    <input type="file" name="File" id="fileInput" class="form-control" accept=".xls,.xlsx" required />
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Submit</button>
+            }
+        </div>
+    </div>
+
+    @if (TempData["StatusMessage"] != null)
+    {
+        <div class="alert alert-info mt-4 text-center">
+            @TempData["StatusMessage"]
+        </div>
+    }
+
+    @if (Model != null && Model.Any())
+    {
+        <div class="table-responsive mt-4">
+            <table class="table table-bordered table-hover text-center">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone No</th>
+                        <th>Address</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Name</td>
+                            <td>@item.Email</td>
+                            <td>@item.PhoneNo</td>
+                            <td>@item.Address</td>
+                            <td class="text-@(item.Status == "Failed" ? "danger" : "success")">
+                                @item.Status
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+
+    @if (TempData["DownloadLink"] != null)
+    {
+        <div class="text-center mt-4">
+            <a href="@Url.Action("DownloadData", "Upload")" class="btn btn-success">
+                Download Uploaded Data as Excel
+            </a>
+        </div>
+    }
+</div>
+

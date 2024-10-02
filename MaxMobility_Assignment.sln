@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35323.107
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaxMobility_Assignment", "MaxMobility_Assignment\MaxMobility_Assignment.csproj", "{A6A32490-7E96-4A05-92CC-D20CF02144E7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A6A32490-7E96-4A05-92CC-D20CF02144E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6A32490-7E96-4A05-92CC-D20CF02144E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6A32490-7E96-4A05-92CC-D20CF02144E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6A32490-7E96-4A05-92CC-D20CF02144E7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AFC4CBB8-9746-4A2B-B560-35D3F20A4A93}
+	EndGlobalSection
+EndGlobal
